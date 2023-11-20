@@ -14,6 +14,8 @@ WEB原来应该是网页端的源码，但已经完全炸掉修复不能，直�
 
 WeChatProgram是微信小程序的源码。
 
+HardwareProgram下放着硬件程序，用的esp8266。
+
 Docs下放着服务器接口API，Bag后缀的是新的。
 
 ## 其他说明
