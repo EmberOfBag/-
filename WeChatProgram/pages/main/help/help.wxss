@@ -1,0 +1,8 @@
+scroll-view {
+	min-height: 100vh;
+}
+
+#logo {
+	width: 400rpx;
+	height: 400rpx;
+}

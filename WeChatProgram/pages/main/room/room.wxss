@@ -1,0 +1,14 @@
+.room-card {
+	height: 200rpx;
+}
+.function-rooms {
+	height: 0rpx;
+}
+.function-rooms-unfold {
+	min-height: 0rpx;
+	max-height: 300rpx;
+}
+
+.border-red {
+	border: 1px solid red;
+}

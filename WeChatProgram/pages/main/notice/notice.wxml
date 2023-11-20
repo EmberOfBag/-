@@ -1,0 +1,30 @@
+<scroll-view scroll-y class="main-page bg-blue light">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">通知</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<view class="cu-card article">
+		<view class="cu-item shadow">
+			<view class="title"><view class="text-cut">图书馆小程序上线辣~</view></view>
+			<view class="content">
+				<image src="https://i.loli.net/2021/03/22/EgowvIJzMdSk53j.jpg" mode="aspectFill"></image>
+				<view class="desc">
+					<view class="text-content"> 大家快来使用呐~~~</view>
+					<!-- <view>  tag标签，先注释了，不删，以后有时间再写
+						<view class="cu-tag bg-red light sm round">正义天使</view>
+						<view class="cu-tag bg-green light sm round">史诗</view>
+					</view> -->
+				</view>
+			</view>
+		</view>
+		<view class="cu-item shadow">
+			<view class="title"><view class="text-cut">招贤纳士</view></view>
+			<view class="content">
+				<image src="https://i.loli.net/2021/03/22/uQGrVYUd2jwEn5P.png" mode="aspectFill"></image>
+				<view class="desc">
+					<view class="text-content"> 诚招各位大佬！</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

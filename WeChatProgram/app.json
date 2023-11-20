@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/main/main/main",
+    "pages/main/room/room",
+    "pages/main/seat/seat",
+    "pages/main/rule/rule",
+    "pages/main/history/history",
+    "pages/main/preference/preference",
+    "pages/main/rank/rank",
+    "pages/main/notice/notice",
+    "pages/main/help/help",
+    "pages/user/user/user",
+    "pages/user/about/about",
+    "pages/user/info/info",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "loading",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#000000",
+    "backgroundColor":"#f6f6f6",
+    "list": [
+      {
+        "pagePath": "pages/main/main/main",
+        "text": "主页",
+        "iconPath": "/img/icon/主页.png",
+        "selectedIconPath": "/img/icon/_主页.png"
+      },
+      {
+        "pagePath": "pages/user/user/user",
+        "text": "用户",
+        "iconPath": "/img/icon/用户.png",
+        "selectedIconPath": "/img/icon/_用户.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom":"/colorui/components/cu-custom",
+    "ec-canvas": "/ec-canvas/ec-canvas"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

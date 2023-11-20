@@ -1,0 +1,58 @@
+<view class="main-page bg-white">
+	<cu-custom bgColor="bg-gradual-blue">
+		<view slot="content">登录</view>
+	</cu-custom>
+	<image src="https://i.loli.net/2021/05/01/mgKEyfWSkJGn4Zr.jpg" mode="heightFix"></image>
+	<form>
+		<view class="cu-form-group">
+			<view class="title text-black">学号</view>
+			<input bindinput="getUserName" placeholder="请输入学号"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title text-black">密码</view>
+			<input bindinput="getPassword" placeholder="请输入密码" password></input>
+			<view class="text-sm text-blue">
+				忘记密码？
+			</view>
+		</view>
+	</form>
+	<view class="flex justify-center margin-top-lg">
+		<button bindtap="dologin" class="cu-btn round lg bg-blue">登录</button>
+	</view>
+	<view class="flex justify-center margin-top-sm">
+		<button bindtap="handleTapSignin"  class="cu-btn round lg lines-blue">注册</button>
+	</view>
+	<view class="text-sm text-center margin-sm">
+		登录即代表你同意<text class="text-blue">用户协议</text>和<text class="text-blue">隐私政策</text>
+	</view>
+	<view class="text-sm text-center margin-sm">
+		遇到问题？<text class="text-blue">查看帮助</text>
+	</view>
+	<view class="cu-modal {{signIn.isShow?'show':''}}">
+		<view class="cu-dialog">
+			<view class="cu-bar bg-white justify-end">
+				<view class="content">注册</view>
+				<view class="action" bindtap="handleTapX">
+					<text class="cuIcon-close text-red"></text>
+				</view> 
+			</view>
+			<view class="padding-xl text-left">
+				<form>
+					<view class="cu-form-group">
+						<view class="title text-black">学号</view>
+						<input placeholder="请输入学号" bindinput="handleInputSignUsername" value=""></input>
+					</view>
+					<view class="cu-form-group">
+						<view class="title text-black">密码</view>
+						<input password placeholder="请输入密码"  bindinput="handleInputSignPwd" value=""></input>
+					</view>
+					<view class="cu-form-group text-black">
+						<view class="title">确认密码</view>
+						<input password placeholder="请确认密码" bindinput="handleInputSignConfirmPwd" value=""></input>
+					</view>
+					<button class="margin-top bg-blue" bindtap="handleTapConfirmSign">确定注册</button>
+				</form>				
+			</view>
+		</view>
+	</view>
+</view>

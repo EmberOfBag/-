@@ -1,0 +1,8 @@
+scroll-view {
+	min-height: 100vh;
+}
+
+#profile-photo {
+	width: 240rpx;
+	height: 240rpx;
+}

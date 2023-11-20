@@ -1,0 +1,10 @@
+<scroll-view scroll-y class="bg-blue light main-page">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">偏好分析</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	
+	<view id="radar-chart" class="bg-white">
+		<ec-canvas id="mychart-dom-radar" canvas-id="mychart-radar" ec="{{ec}}"></ec-canvas>
+	</view>
+</scroll-view>

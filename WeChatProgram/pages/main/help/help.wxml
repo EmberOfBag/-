@@ -1,0 +1,20 @@
+<scroll-view scroll-y class="bg-blue light main-page">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">帮助</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<view class="bg-white radius shadow margin-sm padding" style="height:80vh;">
+		<view class="flex align-center justify-center">
+			<image id="logo" src="https://i.loli.net/2021/05/07/MqKVlZBijLeJYsv.jpg"></image>
+		</view>
+		<view class="text-center margin">
+			<view>
+				<view class="text-bold">Authors </view>
+				Baldmancc01, 聪明的小⑤, EmgerOfBag
+			</view>
+		</view>
+		<view class="flex align-center justify-center">
+			<button class="cu-btn round lg line-blue" open-type="feedback">意见反馈</button>
+		</view>
+	</view>
+</scroll-view>

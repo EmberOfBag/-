@@ -1,0 +1,22 @@
+<scroll-view scroll-y class="bg-blue light main-page">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">排名</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<view class="bg-gray nav text-center">
+		<text id="rank-day" class="cu-item {{target=='rank_day'?'bg-white':''}}" bindtap="switchTab">日排名</text>
+		<text id="rank-week" class="cu-item {{target=='rank_week'?'bg-white':''}}" bindtap="switchTab">周排名</text>
+		<text id="rank-month" class="cu-item {{target=='rank_month'?'bg-white':''}}" bindtap="switchTab">月排名</text>
+	</view>
+	<view class="cu-list menu">
+		<view class="cu-item" wx:for="{{Ranks[target]}}">
+			<view class="content">
+				<text class="cu-avatar sm round text-bold text-black margin-right {{index==0?'bg-yellow':index==1?'bg-grey':index==2?'bg-brown':''}}">{{index+1}}</text>
+				<text class="text-black">{{item.StuName}}</text>
+			</view>
+			<view class="action"> 
+				{{item.ReadTime_7}}h
+			</view>
+		</view>
+	</view>
+</scroll-view>

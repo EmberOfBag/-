@@ -1,0 +1,58 @@
+/* 图例 */
+#legend {
+	border-bottom: 1rpx lightgray solid;
+}
+
+#legend view {
+	height: 30rpx;
+	background-size: 30rpx 30rpx;
+	background-position: 0 0;
+	font-size: 20rpx;
+	text-indent: 50rpx;
+	line-height: 30rpx;
+}
+
+/*用户选座区域，可以拖拽滑动*/
+movable-area {
+	width: 100vw;
+	height: 80vh;
+	position: relative;
+	overflow: hidden;
+}
+
+#seats-area {
+	width: 300vw;
+	height: calc(80vh + 200vw);
+	position: absolute;
+	top: -100vw;
+	left: -100vw;
+}
+
+#unit-group {
+	box-sizing: border-box;
+	border: 1px solid gray;
+	position: absolute;
+	top: 100vw;
+	left: 100vw;
+}
+
+.unit {
+	width: 50rpx;
+	height: 50rpx;
+	font-size: x-small;
+	font-weight: bold;
+	text-align: center;
+	line-height: 35rpx;
+}
+.seatR {
+	background: center center / 40rpx 40rpx  url(https://i.loli.net/2021/03/21/QlxXtJyHebsGBkm.png) no-repeat;
+}
+.seatG {
+	background: center center / 40rpx 40rpx  url(https://i.loli.net/2021/03/21/F1jGxMWw3csDJoE.png) no-repeat;
+}
+.seatY {
+	background: center center / 40rpx 40rpx  url(https://i.loli.net/2021/03/21/FbwuqYmxiAlP46f.png) no-repeat;
+}
+.desk {
+	background: center center / contain  url(https://i.loli.net/2021/04/19/rEqZ63RWbF1Hfna.png) no-repeat;
+}

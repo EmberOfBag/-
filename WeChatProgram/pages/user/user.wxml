@@ -1,0 +1,71 @@
+<scroll-view scroll-y class="scroll-page main-page bg-blue light">
+	<cu-custom bgColor="bg-gradual-blue">
+		<view slot="content">用户</view>
+	</cu-custom>
+	<!-- 用户个人信息区域 -->
+	<view class="cu-card case">
+		<view class="cu-item shadow">
+			<!-- 背景 -->
+			<view class="image">
+				<image src="https://i.loli.net/2021/03/28/8NRcuHhsLkST1UG.jpg" mode="widthFix"></image>
+				<view class="cu-tag">
+					<text class="cuIcon-moreandroid"></text>
+				</view>
+			</view>
+			<!-- 头像区域 -->
+			<view class="cu-list menu-avatar">
+				<view class="cu-item">
+					<view class="cu-avatar round lg" style="background-image:url(https://i.loli.net/2021/03/21/7q1BYPbSeKpmgFc.jpg);"></view>
+					<view class="content flex-sub">
+						<view class="text-black text-bold">{{userInfo.StuName}}</view>
+						<view class="text-gray text-sm flex justify-between">
+							原神天下第一!
+							<view class="text-blue text-sm">
+							自习时长：100h
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 用户界面功能区 -->
+	<view class="cu-list menu card-menu">
+		<view class="cu-item">
+			<view class="content" bindtap="showModal">
+				<text class="cuIcon-search text-blue"></text>
+				<text class="text-grey">违约查询</text>
+			</view>
+		</view>
+		<view class="cu-item">
+			<navigator class="content">
+				<text class="cuIcon-infofill text-brown"></text>
+				<text class="text-grey">关于</text>
+			</navigator>
+		</view>
+		<view class="cu-item">
+			<view class="content">
+				<text class="cuIcon-exit text-red"></text>
+				<text class="text-grey">退出</text>
+			</view>
+		</view>
+	</view>
+	<!-- 违约弹窗 -->
+	<view class="cu-modal {{showViolation?'show':''}}">
+		<view class="cu-dialog">
+			<view class="cu-bar bg-white justify-end">
+				<view class="content">违约次数</view>
+				<view class="action" bindtap="closeModal">
+					<text class="cuIcon-close text-red"></text>
+				</view> 
+			</view>
+			<view class="padding-xl">
+				{{userInfo.Violation}}
+			</view>
+		</view>
+	</view>
+	<!-- 加载框 -->
+	<view class="cu-load load-modal" wx:if="{{isLoading}}">
+		<view class="gray-text">loading...</view>
+	</view>
+</scroll-view>

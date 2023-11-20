@@ -1,0 +1,52 @@
+<view class="main-page bg-white">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">个人信息</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<form>
+		<view class="cu-form-group">
+			<view class="title text-black">头像</view>
+			<view class="cu-avatar radius" style="background-image:url(https://i.loli.net/2021/03/21/7q1BYPbSeKpmgFc.jpg);"></view>
+		</view>
+		<view class="cu-form-group">
+			<view class="title text-black">姓名</view>
+			<input bindinput="getUserName" placeholder="{{userInfo.StuName}}" disabled></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title text-black">学号</view>
+			<input bindinput="getPassword" placeholder="{{userInfo.StuID}}" disabled></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title text-black">密码</view>
+			<input bindinput="getPassword" placeholder="********" type="password" disabled></input>
+			<button class="cu-btn bg-blue shadow" size="mini" bindtap="bindEditBtn">修改</button>
+		</view>
+	</form>
+	<view class="cu-modal {{isChangepwdModalShow?'show':''}}">
+		<view class="cu-dialog">
+			<view class="cu-bar bg-white justify-end">
+				<view class="content">修改密码</view>
+				<view class="action" bindtap="closeModal">
+					<text class="cuIcon-close text-red"></text>
+				</view> 
+			</view>
+			<view class="padding-xl text-left">
+				<form>
+					<view class="cu-form-group">
+						<view class="title text-black">旧密码</view>
+						<input password placeholder="请输入旧密码" bindinput="bindOldPwdInput"></input>
+					</view>
+					<view class="cu-form-group">
+						<view class="title text-black">新密码</view>
+						<input password placeholder="请输入新密码" bindinput="bindNewPwdInput"></input>
+					</view>
+					<view class="cu-form-group text-black">
+						<view class="title">确认密码</view>
+						<input password placeholder="请确认密码" bindinput="bindConfirmPwdInput"></input>
+					</view>
+					<button class="margin-top bg-blue" bindtap="handleTapConfirmBtn">确定修改</button>
+				</form>
+			</view>
+		</view>
+	</view>
+</view>

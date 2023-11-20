@@ -1,0 +1,80 @@
+<scroll-view scroll-y class="scroll-page main-page bg-blue light">
+	<cu-custom bgColor="bg-gradual-blue">
+		<view slot="content">主页</view>
+	</cu-custom>
+	<!-- 用户状态显示 -->
+	<view id="status-panel" class="margin-sm padding-xl radius bg-white shadow">
+		<view class="flex justify-center">
+			<image src="{{statusImg[userInfo.UserStatus]}}" class="status-img round"></image>
+		</view>
+		<view class="text-center">
+			<view class="text-center text-xxl text-blue text-bold margin">
+				<text wx:if="{{userInfo.UserStatus=='NotSelect'}}">快去自习吧</text>
+				<text wx:elif="{{userInfo.UserStatus=='NotOnSeat'}}">请尽快到达</text>
+				<text wx:elif="{{userInfo.UserStatus=='Studying'}}">正在自习中</text>
+				<text wx:else>正在加载中</text>
+			</view>
+			<view wx:if="{{userInfo.UserStatus=='NotSelect'}}">
+				当前没有选座
+			</view>
+			<view wx:else>
+				图书馆{{userInfo.SeatID}}号座位
+				<text wx:if="{{userInfo.UserStatus=='NotOnSeat'}}">，剩余时间{{userInfo.RestTime==1?('小于'+userInfo.RestTime):userInfo.RestTime}}min</text>
+			</view>
+		</view>
+	</view>
+
+	<!-- 功能区 -->
+	<view id="function-panel" class="margin-lr-sm margin-top radius bg-white shadow">
+		<view class="cu-list grid col-4">
+			<view class="cu-item">
+				<navigator url="../room/room">
+					<view class="cuIcon-attentionfill text-olive"></view>
+					<text>选座</text>
+				</navigator>	
+			</view>
+			<view class="cu-item">
+				<navigator url="../rule/rule">
+					<view class="cuIcon-list text-red"></view>
+					<text>规则</text>
+				</navigator>
+			</view>
+			<view class="cu-item">
+				<navigator url="../history/history">
+					<view class="cuIcon-footprint text-blue"></view>
+					<text>历史记录</text>
+				</navigator>
+			</view>
+			<view class="cu-item">
+				<navigator url="../preference/preference">
+					<view class="cuIcon-creative text-orange"></view>
+					<text>偏好分析</text>
+				</navigator>
+			</view>
+			<view class="cu-item">
+				<navigator url="../rank/rank">
+					<view class="cuIcon-rankfill text-green"></view>
+					<text>排名</text>
+				</navigator>
+			</view>
+			<view class="cu-item">
+				<navigator url="../notice/notice">
+					<view class="cuIcon-noticefill text-yellow"></view>
+					<text>通知</text>
+				</navigator>
+			</view>
+			<view class="cu-item">
+				<navigator url="../help/help">
+					<view class="cuIcon-questionfill text-purple"></view>
+					<text>帮助</text>
+				</navigator>	
+			</view>
+			<view wx:if="{{userInfo.UserStatus=='Studying'||userInfo.UserStatus=='NotOnSeat'}}" class="cu-item" bindtap="tapQuit">
+				<view>
+					<view class="cuIcon-roundclosefill text-red"></view>
+					<text>签退</text>
+				</view>	
+			</view>
+		</view>
+	</view>
+</scroll-view>

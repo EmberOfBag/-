@@ -1,0 +1,21 @@
+scroll-view {
+	box-sizing: border-box;
+	height: 100vh;
+}
+
+/*** 用户状态显示 ***/
+#status-panel {
+	box-sizing: border-box;
+}
+.status-img {
+	box-sizing: border-box;
+	width: 400rpx;
+	height: 400rpx;
+	border:6px solid;
+}
+
+
+/* 功能面板 */
+#function-panel {
+	box-sizing: border-box;
+}

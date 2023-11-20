@@ -1,0 +1,34 @@
+<scroll-view scroll-y class="scroll-page main-page bg-blue light">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">选择座位</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<!-- 图例 -->
+	<view id="legend" class="padding-sm bg-gray">
+		<view class="seatG text-black margin-bottom-sm">
+			可选座位
+		</view>
+		<view class="seatR text-black margin-bottom-sm">
+			已选座位（用户已就座）
+		</view>
+		<view class="seatY text-black">
+			已选座位（用户未就座）
+		</view>
+	</view>
+	<!-- 选座区域 -->
+	<movable-area class="bg-gray">
+			<movable-view id="seats-area" direction="all" scale="true" out-of-bounds="true" scale-min="0.8" scale-max="2">
+				<view id="unit-group">
+					<view wx:for="{{seats}}"  wx:for-index="i" class="flex">
+						<block wx:for="{{seats[i]}}" wx:for-index="j">
+							<view wx:if="{{seats[i][j]=='DOOR'||seats[i][j]=='W'||seats[i][j]=='GND'}}" class="unit"></view>
+							<view wx:elif="{{seats[i][j]=='DESK'}}" class="unit desk"></view>
+							<view wx:elif="{{seats[i][j][1]=='G'}}" id="{{seats[i][j]}}" class="unit seatG" bindtap="tapGSeat"></view>
+							<view wx:elif="{{seats[i][j][1]=='Y'}}" id="{{seats[i][j]}}" class="unit seatY" bindtap="tapRYSeat"></view>
+							<view wx:elif="{{seats[i][j][1]=='R'}}" id="{{seats[i][j]}}" class="unit seatR" bindtap="tapRYSeat"></view>
+						</block>
+					</view>
+				</view>
+			</movable-view>
+	</movable-area>
+</scroll-view>

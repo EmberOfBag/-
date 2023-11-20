@@ -1,0 +1,19 @@
+<scroll-view scroll-y class="bg-blue light main-page">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">历史</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<!-- 选择历史记录 -->
+	<view class="cu-form-group text-black ">
+		<view class="title">日期选择</view>
+		<picker value="{{index}}" range="{{timePeriod}}" bindchange="bindPickerChange">
+			<view class="picker">
+				{{index==-1?"请选择时间段":timePeriod[index]}}
+			</view>
+		</picker>
+	</view>
+	<view id="line-chart"  class="margin-top shadow">
+		<ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ec}}"></ec-canvas>
+	</view>
+	
+</scroll-view>

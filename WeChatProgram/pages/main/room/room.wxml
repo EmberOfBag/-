@@ -1,0 +1,66 @@
+<scroll-view scroll-y class="scroll-page main-page bg-blue light">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">选择自习室</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+
+	<!-- 历史、收藏选座 -->
+	<view >
+		<!-- 导航栏 -->
+		<view class="bg-gray light nav">
+			<view class="flex text-center">
+				<view id="func0" class="cu-item flex-sub {{targetFunction==0?'text-blue cur':''}}" bindtap="switchFunction">
+					历史选座
+					<text class="{{targetFunction==0?(isfold?'cuIcon-unfold':'cuIcon-fold'):''}}"></text>
+				</view>
+				<view id="func1" class="cu-item flex-sub {{(targetFunction)==1?'text-blue cur':''}}" bindtap="switchFunction">
+					收藏座位
+					<text class="{{targetFunction==1?(isfold?'cuIcon-unfold':'cuIcon-fold'):''}}"></text>
+				</view>
+			</view>
+		</view>
+		<!-- 历史选座/收藏座位信息列表 -->
+		<scroll-view scroll-y class="{{isfold?'function-rooms':'function-rooms-unfold'}} cu-list menu bg-white">
+			<view class="bg-white  margin-xs padding-sm radius shadow {{item.isOccupied?'border-red':''}}" wx:for="{{functionRooms[targetFunction]}}">
+				<navigator url="../seat/seat">
+					<view>
+						<view class="flex text-sm text-black margin-right">
+							{{item.name+item.seatId}}号座位<text wx:if="{{item.isOccupied}}" class="text-red">（已满）</text>
+						</view>
+					</view>
+				</navigator>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 图书馆自习室列表 -->
+	<view>
+		<!-- 导航栏 -->
+		<view class="bg-gray nav">
+			<view class="flex text-center">
+				<view id="floor{{index+1}}" class="cu-item flex-sub {{(targetFloor-1)==index?'text-blue cur':''}}" wx:for="{{rooms}}" bindtap="switchFloor">
+					{{index+1}}楼
+				</view>
+			</view>
+		</view>
+		<!-- 房间信息列表 -->
+		<view class="cu-list menu">
+			<view class="room-card bg-white margin-xs padding radius shadow" wx:for="{{rooms[targetFloor-1]}}">
+				<navigator url="../seat/seat">
+					<view class="margin-bottom">
+						<view class="flex text-xl text-black text-bold margin-right">{{item.name}}</view>
+						<view class="text-black">
+							<text class="cuIcon-remind"></text>开放时间：{{item.time}}
+						</view>
+					</view>
+					<!-- 进度条 -->
+					<view class="flex">
+						<view class="cu-progress round striped active">
+							<view class="bg-blue" style="width:{{item.usage/item.amount*100}}%"></view>
+						</view>
+						<text class="margin-left text-xs text-center">座位使用({{item.usage}}/{{item.amount}})</text>
+					</view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</scroll-view>

@@ -1,0 +1,13 @@
+<scroll-view scroll-y class="scroll-page main-page bg-blue light">
+	<cu-custom bgColor="bg-gradual-blue" isBack="true">
+		<view slot="content">规则</view>
+		<view slot="backText">返回</view>
+	</cu-custom>
+	<view id="announce" class="bg-white radius shadow margin-sm" style="height:80vh;">
+		<view class="text-lg padding">
+			<view>1.若你选座后40min内没有入座，座位会自动释放并且记录违规一次。</view>
+        	<view>2.累计违规3次后，禁用选座功能一周。</view>
+		</view>
+       
+	</view>
+</scroll-view>
